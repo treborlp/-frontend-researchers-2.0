@@ -39,26 +39,26 @@
                               </div>
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Segundo Apellido" name="c" [(ngModel)]="usuario.segundoApellido" type="text">
+                                  <input matInput placeholder="Segundo Apellido" name="segundoApellido" [(ngModel)]="usuario.segundoApellido" type="text">
                                 </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
                               <div class="col-md-12">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Dirección" type="text">
+                                  <input matInput placeholder="Dirección" name="direccion" [(ngModel)]="usuario.direccion"  type="text">
                                 </mat-form-field>
                               </div>
                           </div>
                           <div class="row">
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Ciudad" type="text">
+                                  <input matInput placeholder="Ciudad" name="ciudad" [(ngModel)]="usuario.ciudad" type="text">
                                 </mat-form-field>
                               </div>
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Country" type="text">
+                                  <input matInput placeholder="Pais" name="country" [(ngModel)]="usuario.country" type="text">
                                 </mat-form-field>
                               </div>
                               <div class="col-md-4">
@@ -71,7 +71,7 @@
                               <div class="col-md-12">
                                 <label>About Me</label>
                                 <mat-form-field class="example-full-width">
-                                   <textarea matInput placeholder="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."></textarea>
+                                   <textarea matInput name="bio" [(ngModel)]="usuario.bio" placeholder=""></textarea>
                                  </mat-form-field>
                                   <!-- <div class="form-group">
 

@@ -10,7 +10,9 @@ export class Usuarios {
     primerApellido: string;
     segundoApellido: string;
     email:string;
+    direccion:string;
+    bio:string;
+    ciudad:string;
+    country:string;
     roles: Role[] =[];
-
-    
 }
