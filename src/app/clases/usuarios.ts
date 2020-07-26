@@ -14,5 +14,6 @@ export class Usuarios {
     bio:string;
     ciudad:string;
     country:string;
+    foto:string;
     roles: Role[] =[];
 }

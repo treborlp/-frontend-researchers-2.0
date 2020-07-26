@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpHeaders, HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { Usuarios } from '../clases/usuarios';
@@ -61,6 +61,30 @@ export class UsuarioService {
         }
       })
     )
+  }
+
+  findUserById(id: number): Observable<Usuarios>{
+    return this.http.get<Usuarios>(`${this.url}/id/${id}`, {headers: this.agregarAuthorizationHeader()}).pipe(
+      catchError(e=> {
+        console.log(e);
+        if(this.isNoAutorizado(e)){
+          return throwError(e);
+        }
+      })
+    )
+  }
+
+  subirFoto(archivo: File, id): Observable<HttpEvent<{}>>{
+    let formData = new FormData();
+    formData.append("archivo",archivo);
+    formData.append("id",id);
+
+    const req = new HttpRequest('POST', `${this.url}/upload`,formData, {
+      reportProgress:true
+    });
+
+    return this.http.request(req);
+
   }
 
 }

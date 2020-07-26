@@ -92,17 +92,42 @@
               <div class="card card-profile">
                   <div class="card-avatar">
                       <a href="javascript:void(0)">
+                        <div *ngIf="usuario?.foto; else elseBlock">
+                          <img src="{{url_backend}}/api/upload/img/{{usuario.foto}}" class="img" alt="...">
+                        </div>
+  
+                        <ng-template #elseBlock>
                           <img class="img" src="./assets/img/faces/marc.jpg" />
+                        </ng-template>
                       </a>
                   </div>
                   <div class="card-body">
                       <h6 class="card-category text-gray">CEO / Co-Founder</h6>
-                      <h4 class="card-title">Alec Thompson</h4>
+                      <h4 class="card-title">{{usuario.nombre}} {{usuario.primerApellido}}</h4>
                       <p class="card-description">
-                          Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                          {{usuario.bio}}
                       </p>
                       <a href="javascript:void(0)" class="btn btn-danger btn-round">Follow</a>
                   </div>
+              </div>
+
+              <div class="card-body">
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input (change)="seleccionarFoto($event)" type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                    <label class="custom-file-label" for="inputGroupFile04">Buscar Foto</label>
+                  </div>
+                  <div class="input-group-append">
+                    <button (click)="subirFoto()" class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Subir</button>
+                  </div>
+                </div>
+                <!--Barra de Progreso-->
+                <div class="progress" *ngIf="progresoSubidoFoto > 0" >
+                  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" [ngStyle]="{width: progresoSubidoFoto+'%'}" attr.aria-valuenow="{{progresoSubidoFoto}}" aria-valuemin="0" aria-valuemax="100">
+                    {{progresoSubidoFoto}}
+                  </div>
+                </div>
+                <!--Fin Barra de Progreso-->
               </div>
           </div>
       </div>
