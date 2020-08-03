@@ -9,6 +9,8 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { AuthGuard } from '../../guard/auth.guard';
+import { ResearchProfileComponent } from 'app/research-profile/research-profile.component';
+import { PresentationsComponent } from 'app/presentations/presentations.component';
 export const AdminLayoutRoutes: Routes = [
     // {
     //   path: '',
@@ -55,6 +57,8 @@ export const AdminLayoutRoutes: Routes = [
 
     { path: 'dashboard',      component: DashboardComponent, canActivate: [AuthGuard] },
     { path: 'user-profile',   component: UserProfileComponent },
+    { path: 'research-profile',component: ResearchProfileComponent},
+    { path: 'research-presentations',component: PresentationsComponent},
     { path: 'table-list',     component: TableListComponent },
     { path: 'typography',     component: TypographyComponent },
     { path: 'icons',          component: IconsComponent },

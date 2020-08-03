@@ -17,6 +17,8 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
+import { ResearchProfileComponent } from 'app/research-profile/research-profile.component';
+import { PresentationsComponent } from 'app/presentations/presentations.component';
 
 @NgModule({
   imports: [
@@ -34,6 +36,8 @@ import {MatSelectModule} from '@angular/material/select';
   declarations: [
     DashboardComponent,
     UserProfileComponent,
+    ResearchProfileComponent,
+    PresentationsComponent,
     TableListComponent,
     TypographyComponent,
     IconsComponent,
