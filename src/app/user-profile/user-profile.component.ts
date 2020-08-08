@@ -4,6 +4,7 @@ import { Usuarios } from 'app/clases/usuarios';
 import { UsuarioService } from 'app/service/usuario.service';
 import { HttpEventType } from '@angular/common/http';
 import { URL_BACKEND } from 'app/config/config';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-profile',
@@ -32,7 +33,13 @@ export class UserProfileComponent implements OnInit {
     this.usuario.roles = []; // Only for user purpose
     this._usuarioService.updateUser(this.usuario).subscribe(usuario =>{
       this.usuario = usuario;
-      console.log(this.usuario);
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Actualizado',
+        showConfirmButton: false,
+        timer: 1500
+      })
     })
   }
 
@@ -42,7 +49,11 @@ export class UserProfileComponent implements OnInit {
     console.log(this.fotoSeleccionada)
     if(this.fotoSeleccionada.type.indexOf("image")<0){
       this.fotoSeleccionada = null;
-      console.log("Archivo no permitido");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Parece que no es una foto!'
+      })
     }
 
   }
@@ -58,7 +69,13 @@ export class UserProfileComponent implements OnInit {
           }else if(event.type === HttpEventType.Response){
             let response: any = event.body;
             this.usuario = response.usuario as Usuarios;
-            console.log(this.usuario);   
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Imagen Actualizada',
+              showConfirmButton: false,
+              timer: 1000
+            }) 
           }
         }
       )

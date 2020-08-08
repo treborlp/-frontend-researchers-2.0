@@ -4,6 +4,7 @@ import { Usuarios } from 'app/clases/usuarios';
 import { AuthService } from 'app/service/auth.service';
 import { ResearcherService } from 'app/service/researcher.service';
 import { UsuarioService } from 'app/service/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-research-profile',
@@ -45,6 +46,13 @@ export class ResearchProfileComponent implements OnInit {
     
     this._researchService.createResearcher(this.investigador).subscribe(newResearcher =>{
         this.investigador = newResearcher;
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Actualizado',
+          showConfirmButton: false,
+          timer: 1500
+        })
     })
   }
 
