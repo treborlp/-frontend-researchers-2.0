@@ -17,8 +17,13 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
 import { ResearchProfileComponent } from 'app/research-profile/research-profile.component';
 import { PresentationsComponent } from 'app/presentations/presentations.component';
+import { PresentationComponent } from 'app/presentations/presentation/presentation.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   imports: [
@@ -32,6 +37,10 @@ import { PresentationsComponent } from 'app/presentations/presentations.componen
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatTableModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   declarations: [
     DashboardComponent,
@@ -44,7 +53,9 @@ import { PresentationsComponent } from 'app/presentations/presentations.componen
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
-  ]
+    PresentationComponent
+  ],
+  entryComponents: [PresentationComponent]
 })
 
 export class AdminLayoutModule {}

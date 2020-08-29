@@ -1,4 +1,5 @@
 import { Role } from './role';
+import { Publication } from './publication';
 
 export class Usuarios {
     id:number;
@@ -15,5 +16,6 @@ export class Usuarios {
     ciudad:string;
     country:string;
     foto:string;
+    publications: Publication[]=[];
     roles: Role[] =[];
 }

@@ -24,7 +24,7 @@ export class ResearchProfileComponent implements OnInit {
    }
 
   ngOnInit(): void {
-   this.verificarSiTienePerfilInvestigador();
+  // this.verificarSiTienePerfilInvestigador();
   }
 
   verificarSiTienePerfilInvestigador(){

@@ -57,14 +57,24 @@ export class PresentationService {
     )
   }
 
-  getPresentationById(idResearcher: number): Observable<Presentation[]>{
-    return this.http.get<Presentation[]>(`${this.url}s/${idResearcher}`, {headers: this.agregarAuthorizationHeader()}).pipe(
+  getPresentationById(idUsuario: number): Observable<Presentation[]>{
+    return this.http.get<Presentation[]>(`${this.url}s/${idUsuario}`, {headers: this.agregarAuthorizationHeader()}).pipe(
       catchError(e=>{
         if(this.isNoAutorizado(e)){
           return throwError(e);
         }
       })
     ) 
+  }
+
+  editPresentationById(presentation: Presentation): Observable<Presentation>{
+    return this.http.put<Presentation>(`${this.url}/${presentation.id}`,presentation, {headers: this.agregarAuthorizationHeader()}).pipe(
+      catchError(e=>{
+        if(this.isNoAutorizado(e)){
+          return throwError(e);
+        }
+      })
+    )
   }
 
   

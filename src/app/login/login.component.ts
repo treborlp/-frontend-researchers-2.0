@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     console.log("today is:"+now.format());
     if(this.auth.isAuthenticated()){
      this.router.navigate(["/dashboard"]);
-     //console.log("estas autentificado");
+     console.log("estas autentificado");
     }
    
   }

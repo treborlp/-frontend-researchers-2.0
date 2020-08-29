@@ -7,6 +7,5 @@ export class Researcher {
     profileCTIVitae: String;
     profileGoogleScholar: String;
     profileOrcid: String;
-    publications: Publication[]=[];
     usuario: Usuarios;
 }

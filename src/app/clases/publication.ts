@@ -1,4 +1,4 @@
-import { Researcher } from './researcher';
+import { Usuarios } from './usuarios';
 
 export class Publication {
     id: number;
@@ -7,5 +7,5 @@ export class Publication {
     journal:string;
     type:string;
     doiUrl:string;
-    researcher: Researcher;
+    usuario: Usuarios;
 }

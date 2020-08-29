@@ -1,124 +1,79 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
-                <button class="btn btn-success btn-block btn-fill " data-toggle="modal" data-target="#createPresentation">
-                    Agregar Ponencia
+            <div class="col-md-1">
+                <button mat-fab color="warn" (click)="onCreateNew()">
+                    <mat-icon>add</mat-icon>
                 </button>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-4">
+                <div class="search-div">
+                    <mat-form-field class="search-form-field" floatLabel="never">
+                        <input matInput [(ngModel)]="searchKey" placeholder="Buscar" autocomplete="off" (keyup)="applyFilter()">
+                        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="row">
 
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Simple Table</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
+                        <h4 class="card-title ">Presentaciones</h4>
+                        <p class="card-category">Registro de ponencias desarrolladas en el INAIGEM</p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table">
-                                <thead class=" text-primary">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th>
-                                        Name
-                                    </th>
-                                    <th>
-                                        Country
-                                    </th>
-                                    <th>
-                                        City
-                                    </th>
-                                    <th>
-                                        Salary
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Dakota Rice
-                                        </td>
-                                        <td>
-                                            Niger
-                                        </td>
-                                        <td>
-                                            Oud-Turnhout
-                                        </td>
-                                        <td class="text-primary">
-                                            $36,738
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                            <div class="mat-elevation-z8">
+                                <mat-table [dataSource]="listData" matSort>
+                                    <ng-container matColumnDef="ID">
+                                        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+                                        <mat-cell *matCellDef="let element; index as i">{{i+1}}</mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="url">
+                                        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>Url</mat-header-cell>
+                                        <mat-cell *matCellDef="let element">{{element.url}}</mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="fechaPresentacion">
+                                        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>Fecha Presentacion</mat-header-cell>
+                                        <mat-cell *matCellDef="let element">{{element.fechaPresentacion}}</mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="title">
+                                        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>Titulo</mat-header-cell>
+                                        <mat-cell *matCellDef="let element">{{element.title}}</mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="actions">
+                                        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                                        <mat-cell *matCellDef="let row">
+                                            <button mat-icon-button><mat-icon>launch</mat-icon></button>
+                                            <button mat-icon-button color="warn"><mat-icon>delete_outline</mat-icon></button>
+                                        </mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="loading">
+                                        <mat-footer-cell *matFooterCellDef colspan="6">
+                                            Cargando datos...
+                                        </mat-footer-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="noData">
+                                        <mat-footer-cell *matFooterCellDef colspan="6">
+                                            Sin presentaciones por ahora...
+                                        </mat-footer-cell>
+                                    </ng-container>
+
+                                    <mat-header-row *matHeaderRowDef="displayColumns"></mat-header-row>
+                                    <mat-row *matRowDef="let row; columns: displayColumns;"></mat-row>
+                                    <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"> </mat-footer-row>
+                                    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"> </mat-footer-row>
+                                </mat-table>
+                                <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-  </div>
-
-  <!-- Buy-Modal-angular -->
-<div class="modal modal-angular fade" id="createPresentation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body text-center">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header card-header-danger">
-                            <h4 class="card-title">Añadir Presentaciones</h4>
-                            <p class="card-category"></p>
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                          <mat-form-field class="example-full-width">
-                                            <input matInput placeholder="Titulo" [(ngModel)]="newPresentation.title" name="title" >
-                                          </mat-form-field>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                      <div class="col-md-12">
-                                      <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Dirección Web" [(ngModel)]="newPresentation.url" name="url" >
-                                      </mat-form-field>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                      <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Fecha" [(ngModel)]="newPresentation.fechaPresentacion"  name="fechaPresentacion"  type="date">
-                                      </mat-form-field>
-                                    </div>
-                                </div>
-
-                                <!--<div class="row">
-                                    <mat-form-field appearance="fill">
-                                        <mat-label>Value binding</mat-label>
-                                        <input matInput [matDatepicker]="picker3" [value]="date.value">
-                                        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-                                        <mat-datepicker #picker3></mat-datepicker>
-                                    </mat-form-field>
-                                </div> -->
-
-                                
-
-                                
-                                <button mat-raised-button type="button" (click)="crearPresentacion()"  class="btn btn-danger pull-right">Crear Presentación</button> 
-                                
-
-                                <div class="clearfix"></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    </div>
-  

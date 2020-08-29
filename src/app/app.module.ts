@@ -25,6 +25,8 @@ import {
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ResearchProfileComponent } from './research-profile/research-profile.component';
+import { PresentationComponent } from './presentations/presentation/presentation.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -37,6 +39,7 @@ import { ResearchProfileComponent } from './research-profile/research-profile.co
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    MatDialogModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })

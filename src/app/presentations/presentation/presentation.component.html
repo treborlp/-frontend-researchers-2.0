@@ -1,0 +1,40 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-danger">
+            <h4 class="card-title">Añadir Presentaciones</h4>
+            <p class="card-category"></p>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Titulo" [(ngModel)]="newPresentation.title" name="title">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Dirección Web" [(ngModel)]="newPresentation.url" name="url">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Fecha" [(ngModel)]="newPresentation.fechaPresentacion"
+                                name="fechaPresentacion" type="date">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <button mat-raised-button type="button" (click)="crearPresentacion()" class="btn btn-danger pull-right">Crear Presentación</button>
+
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+  
