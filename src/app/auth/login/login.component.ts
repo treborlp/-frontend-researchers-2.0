@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation, Inject } from '@angular/core';
-import { Usuarios } from '../clases/usuarios';
-import { AuthService } from '../service/auth.service';
+import { Usuarios } from '../../clases/usuarios';
+import { AuthService } from '../../service/auth.service';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
 

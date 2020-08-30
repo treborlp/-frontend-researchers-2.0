@@ -1,38 +1,24 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from 'app/login/login.component';
+import { PagesRoutingModule } from './pages/pages.routing';
+import { AuthRoutingModule } from './auth/auth.routing';
 
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { NotfoundComponent } from './404/notfound/notfound.component';
+import { PublicRoutingModule } from './public/public.routing';
 
 const routes: Routes =[
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },{
-    path: 'login',          
-    component: LoginComponent 
-  },{
-    path: '',
-    component: AdminLayoutComponent,
-    children: [{
-      path: '',
-      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-    }]
-  }
+  //{path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  //{path: '', redirectTo: '/index', pathMatch: 'full'},
+  {path: '**', component: NotfoundComponent}
 ];
 
 @NgModule({
   imports: [
-    CommonModule,
-    BrowserModule,
-    RouterModule.forRoot(routes,{
-       useHash: true
-    })
+    RouterModule.forRoot(routes),
+    PagesRoutingModule,
+    AuthRoutingModule,
+    PublicRoutingModule
   ],
-  exports: [
-  ],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

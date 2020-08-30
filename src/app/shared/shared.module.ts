@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { RouterModule } from '@angular/router';
+
+
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-  ],
   declarations: [
     FooterComponent,
     NavbarComponent,
@@ -20,7 +17,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     FooterComponent,
     NavbarComponent,
     SidebarComponent
-  ]
+  ],
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
 })
-
-export class ComponentsModule { }
+export class SharedModule { }

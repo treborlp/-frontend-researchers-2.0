@@ -74,6 +74,7 @@ export class PresentationsComponent implements OnInit {
   applyFilter(){
     this.listData.filter = this.searchKey.trim().toLowerCase();
   }
+  
 
   
   

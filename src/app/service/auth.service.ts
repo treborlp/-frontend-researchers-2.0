@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { URLSearchParams } from 'url';
 import { Usuarios } from '../clases/usuarios';
 import {URL_BACKEND} from '../config/config';
 

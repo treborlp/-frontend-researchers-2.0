@@ -11,47 +11,47 @@
                         <form>
                             <div class="row">
                                 <div class="col-md-12">
-                                      <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Grado Academico" [(ngModel)]="investigador.maxDegree" name="maxDegree" >
-                                      </mat-form-field>
-                                </div>
-                            </div>
-                            <div class="row">
-                                  <div class="col-md-12">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Dirección de su perfil en CTI Vitae" [(ngModel)]="investigador.profileCTIVitae" name="profileCTIVitae" >
-                                  </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Grado Academico" [(ngModel)]="investigador.maxDegree" name="maxDegree">
+                                    </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Dirección de su perfil en Google Scholar" [(ngModel)]="investigador.profileGoogleScholar"  name="profileGoogleScholar"  type="text">
-                                  </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Dirección de su perfil en CTI Vitae" [(ngModel)]="investigador.profileCTIVitae" name="profileCTIVitae">
+                                    </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
-                                
                                 <div class="col-md-12">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Dirección de su perfil en ORCID" name="profileOrcid" [(ngModel)]="investigador.profileOrcid"  type="text">
-                                  </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Dirección de su perfil en Google Scholar" [(ngModel)]="investigador.profileGoogleScholar" name="profileGoogleScholar" type="text">
+                                    </mat-form-field>
                                 </div>
                             </div>
-                            
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Dirección de su perfil en ORCID" name="profileOrcid" [(ngModel)]="investigador.profileOrcid" type="text">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
                             <button mat-raised-button type="button" (click)="crearPerfildeInvestigador()" *ngIf="!investigador.id else elseBlock1" class="btn btn-danger pull-right">Actualizar Perfil</button>
 
                             <ng-template #elseBlock1>
-                               <button mat-raised-button type="button" (click)="actualizarPerfildeInvestigador()"  class="btn btn-danger pull-right">Actualizar Perfil</button>
+                                <button mat-raised-button type="button" (click)="actualizarPerfildeInvestigador()" class="btn btn-danger pull-right">Actualizar Perfil</button>
                             </ng-template>
+
 
                             <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
-  </div>
-  
+</div>

@@ -1,56 +1,46 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+
+//Modulos
+import { AppRoutingModule } from './app.routing';
+import { PagesModule } from './pages/pages.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; //Modulo para consumo de peticiones web http
-
-
-import { AppRoutingModule } from './app.routing';
-import { ComponentsModule } from './components/components.module';
+import { SharedModule } from './shared/shared.module';
+import { AuthModule } from './auth/auth.module';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { TableListComponent } from './table-list/table-list.component';
-import { TypographyComponent } from './typography/typography.component';
-import { IconsComponent } from './icons/icons.component';
-import { MapsComponent } from './maps/maps.component';
-import { NotificationsComponent } from './notifications/notifications.component';
-import { UpgradeComponent } from './upgrade/upgrade.component';
 import {
   AgmCoreModule
 } from '@agm/core';
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { ResearchProfileComponent } from './research-profile/research-profile.component';
-import { PresentationComponent } from './presentations/presentation/presentation.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { NotfoundComponent } from './404/notfound/notfound.component';
+import { PagesComponent } from './pages/pages.component';
+import { PublicModule } from './public/public.module';
 
 
 @NgModule({
+  declarations: [
+    AppComponent,
+    NotfoundComponent,
+    PagesComponent
+  ],
   imports: [
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     HttpModule,
-    ComponentsModule,
-    RouterModule,
-    AppRoutingModule,
-    MatDialogModule,
+    AppRoutingModule, //Controlador general de rutas
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
+    }),
+    PagesModule,
+    SharedModule,
+    AuthModule,
+    PublicModule
   ],
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    AdminLayoutComponent
-
-  ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
