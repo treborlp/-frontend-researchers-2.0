@@ -23,6 +23,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { PresentationComponent } from './presentations/presentation/presentation.component';
 import { PresentationsComponent } from './presentations/presentations.component';
 import { SharedModule } from 'app/shared/shared.module';
+import { PositionComponent } from './admin/position/position.component';
+import { AdminComponent } from './admin/admin.component';
+
 
 
 @NgModule({
@@ -31,14 +34,16 @@ import { SharedModule } from 'app/shared/shared.module';
     ResearchProfileComponent,
     UserProfileComponent,
     PresentationComponent,
-    PresentationsComponent
+    PresentationsComponent,
+    PositionComponent,
+    AdminComponent
   ],
   exports:[
-    DashboardComponent,
-    ResearchProfileComponent,
-    UserProfileComponent,
-    PresentationComponent,
-    PresentationsComponent
+    // DashboardComponent,
+    // ResearchProfileComponent,
+    // UserProfileComponent,
+    // PresentationComponent,
+    // PresentationsComponent
   ],
   imports: [
     SharedModule,
@@ -59,6 +64,9 @@ import { SharedModule } from 'app/shared/shared.module';
     RouterModule
 
   ],
-  entryComponents: [PresentationComponent]
+  entryComponents: [
+    PresentationComponent,
+    PositionComponent
+  ]
 })
 export class PagesModule { }

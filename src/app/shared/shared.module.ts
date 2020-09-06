@@ -4,6 +4,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
+import { NavComponent } from './public/nav/nav.component';
+import { PublicFooterComponent } from './public/public-footer/public-footer.component';
 
 
 
@@ -11,12 +13,17 @@ import { RouterModule } from '@angular/router';
   declarations: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    NavComponent,
+    PublicFooterComponent //Public nav
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    NavComponent,
+    PublicFooterComponent
+    
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,40 @@
+#nav-bar {
+    position: sticky;
+    z-index: 10;
+    top: 0
+}
+
+.navbar {
+    margin-bottom: 0px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 7%, rgba(212, 212, 212, 1) 100%);
+}
+
+.navbar-brand img {
+    height: 40px;
+    padding-left: 20px;
+}
+
+.nav-item {
+    padding: 0 10px;
+}
+
+.nav-item a {
+    color: black !important;
+    font-weight: 600;
+    float: right;
+    text-align: left;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(22, 178, 136);
+}
+
+.fa-bars {
+    color: rgb(255, 255, 255);
+    font-size: 30px !important;
+}
+
+.navbar-toggler {
+    outline: none !important;
+}

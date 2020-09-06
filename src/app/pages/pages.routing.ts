@@ -4,9 +4,9 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ResearchProfileComponent } from './research-profile/research-profile.component';
-import { PresentationComponent } from './presentations/presentation/presentation.component';
 import { AuthGuard } from 'app/guard/auth.guard';
 import { PresentationsComponent } from './presentations/presentations.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 const routes: Routes = [
@@ -17,7 +17,8 @@ const routes: Routes = [
           {path: '', component:DashboardComponent},
           {path: 'investigador', component:ResearchProfileComponent},
           {path: 'perfil', component: UserProfileComponent},
-          {path: 'presentaciones', component: PresentationsComponent}
+          {path: 'presentaciones', component: PresentationsComponent},
+          {path: 'admin', component: AdminComponent}
         ],
         canActivate: [AuthGuard] //Activación
       }

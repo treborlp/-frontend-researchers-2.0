@@ -9,7 +9,7 @@ import * as $ from "jquery";
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
-  styles: []
+  styleUrls: []
 })
 export class PagesComponent implements OnInit {
   private _router: Subscription;

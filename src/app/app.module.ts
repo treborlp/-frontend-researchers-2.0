@@ -17,8 +17,6 @@ import {
 } from '@agm/core';
 import { NotfoundComponent } from './404/notfound/notfound.component';
 import { PagesComponent } from './pages/pages.component';
-import { PublicModule } from './public/public.module';
-
 
 @NgModule({
   declarations: [
@@ -32,14 +30,13 @@ import { PublicModule } from './public/public.module';
     ReactiveFormsModule,
     HttpClientModule,
     HttpModule,
-    AppRoutingModule, //Controlador general de rutas
+    AppRoutingModule, //Controlador general de rutas 1
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
     PagesModule,
     SharedModule,
-    AuthModule,
-    PublicModule
+    AuthModule
   ],
   bootstrap: [AppComponent]
 })

@@ -25,12 +25,14 @@ export class PresentationsComponent implements OnInit {
   searchKey: string;
   listData: MatTableDataSource<Presentation>;
   displayColumns: string[] = ['ID','title','fechaPresentacion', 'url','actions']; 
+
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private _presentationService: PresentationService,
               private _authService: AuthService,
               private dialog: MatDialog) { 
+                
     this.usuario.id = this._authService.usuario.id;}
 
   ngOnInit(): void {

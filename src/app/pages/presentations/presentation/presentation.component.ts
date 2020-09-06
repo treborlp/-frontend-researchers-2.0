@@ -5,7 +5,6 @@ import { PresentationService } from 'app/service/presentation.service';
 import { Presentation } from 'app/clases/presentation';
 import Swal from 'sweetalert2';
 import { MatDialogRef } from "@angular/material/dialog";
-import { PresentationsComponent } from '../presentations.component';
 
 @Component({
   selector: 'app-presentation',

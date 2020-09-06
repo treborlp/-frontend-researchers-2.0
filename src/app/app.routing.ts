@@ -4,10 +4,9 @@ import { PagesRoutingModule } from './pages/pages.routing';
 import { AuthRoutingModule } from './auth/auth.routing';
 
 import { NotfoundComponent } from './404/notfound/notfound.component';
-import { PublicRoutingModule } from './public/public.routing';
 
 const routes: Routes =[
-  //{path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   //{path: '', redirectTo: '/index', pathMatch: 'full'},
   {path: '**', component: NotfoundComponent}
 ];
@@ -16,8 +15,7 @@ const routes: Routes =[
   imports: [
     RouterModule.forRoot(routes),
     PagesRoutingModule,
-    AuthRoutingModule,
-    PublicRoutingModule
+    AuthRoutingModule
   ],
   exports: [RouterModule]
 })

@@ -1,0 +1,9 @@
+.bottom-img {
+    width: 100%;
+}
+
+#public-footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
