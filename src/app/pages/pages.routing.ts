@@ -15,12 +15,12 @@ const routes: Routes = [
         component: PagesComponent,
         children: [
           {path: '', component:DashboardComponent},
-          {path: 'investigador', component:ResearchProfileComponent},
+          //{path: 'admin', component: AdminComponent}, // Sección de administrador del sistema
           {path: 'perfil', component: UserProfileComponent},
-          {path: 'presentaciones', component: PresentationsComponent},
-          {path: 'admin', component: AdminComponent}
+          {path: 'investigador', component:ResearchProfileComponent},
+          {path: 'presentaciones', component: PresentationsComponent}
         ],
-        canActivate: [AuthGuard] //Activación
+        canActivate: [AuthGuard] //Autentificación
       }
 ];
 
